@@ -75,6 +75,12 @@ const addRarity = (data) => {
   }
 };
 
+const addLegend = (data) => {
+  if (data.attributes[5] && data.attributes[0].value === "Legendary") {
+    data.attributes[5].value = "Legendary";
+  }
+};
+
 // let file1Raw = fs.readFileSync("3.json");
 let file1Raw = fs.readFileSync("test.json");
 let file1 = JSON.parse(file1Raw);
@@ -96,6 +102,7 @@ file1.forEach((element) => {
   renameBG(element);
   deleteFront(element);
   addRarity(element);
+  addLegend(element);
   //   newData.mod5 = mod5;
   //let writeData = JSON.stringify(newData, null, 2);
   //fs.writeFile(edition + ".json", writeData, (err) => {
