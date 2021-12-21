@@ -29,6 +29,36 @@ const renameBG = (data) => {
   if (data.attributes[0].value === "Background 03") {
     data.attributes[0].value = "Green";
   }
+  if (data.attributes[0].value === "Background 04") {
+    data.attributes[0].value = "Green";
+  }
+  if (data.attributes[0].value === "Background 05") {
+    data.attributes[0].value = "Green";
+  }
+  if (data.attributes[0].value === "Background 06") {
+    data.attributes[0].value = "Green";
+  }
+  if (data.attributes[0].value === "Background 07") {
+    data.attributes[0].value = "Green";
+  }
+  if (data.attributes[0].value === "Background 08") {
+    data.attributes[0].value = "Green";
+  }
+  if (data.attributes[0].value === "Background 09") {
+    data.attributes[0].value = "Green";
+  }
+  if (data.attributes[0].value === "Background 10") {
+    data.attributes[0].value = "Green";
+  }
+};
+
+const deleteFront = (data) => {
+  if (data.attributes[3].value[0] === " ") {
+    data.attributes[3].value = data.attributes[3].value.slice(1);
+  }
+  if (data.attributes[4].value[0] === " ") {
+    data.attributes[4].value = data.attributes[4].value.slice(1);
+  }
 };
 
 // let file1Raw = fs.readFileSync("3.json");
@@ -50,6 +80,7 @@ file1.forEach((element) => {
   //     element.attributes[0].value = "Grey";
   //   }
   renameBG(element);
+  deleteFront(element);
 
   //   newData.mod5 = mod5;
   //let writeData = JSON.stringify(newData, null, 2);
