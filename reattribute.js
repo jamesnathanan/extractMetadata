@@ -61,6 +61,17 @@ const deleteFront = (data) => {
   }
 };
 
+const addRarity = (data) => {
+  if (
+    rareAccess.includes(data.attributes[4].value) ||
+    rareBody.includes(data.attributes[3].value)
+  ) {
+    data.attributes.push({ trait_type: "Rarity", value: "Rare" });
+  } else {
+    data.attributes.push({ trait_type: "Rarity", value: "Uncommon" });
+  }
+};
+
 // let file1Raw = fs.readFileSync("3.json");
 let file1Raw = fs.readFileSync("test.json");
 let file1 = JSON.parse(file1Raw);
@@ -81,7 +92,7 @@ file1.forEach((element) => {
   //   }
   renameBG(element);
   deleteFront(element);
-
+  addRarity(element);
   //   newData.mod5 = mod5;
   //let writeData = JSON.stringify(newData, null, 2);
   //fs.writeFile(edition + ".json", writeData, (err) => {
