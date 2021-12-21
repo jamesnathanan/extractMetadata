@@ -19,6 +19,18 @@ const rareAccess = [
 
 const rareBody = ["RareBody1", "RareBody2", "RareBody3"];
 
+const renameBG = (data) => {
+  if (data.attributes[0].value === "Background 01") {
+    data.attributes[0].value = "Red";
+  }
+  if (data.attributes[0].value === "Background 02") {
+    data.attributes[0].value = "Blue";
+  }
+  if (data.attributes[0].value === "Background 03") {
+    data.attributes[0].value = "Green";
+  }
+};
+
 // let file1Raw = fs.readFileSync("3.json");
 let file1Raw = fs.readFileSync("test.json");
 let file1 = JSON.parse(file1Raw);
@@ -27,15 +39,18 @@ console.log(file1);
 
 file1.forEach((element) => {
   console.log(element.attributes);
-  if (element.attributes[0].value === "Background 01") {
-    element.attributes[0].value = "Black";
-  }
-  if (element.attributes[0].value === "Background 02") {
-    element.attributes[0].value = "White";
-  }
-  if (element.attributes[0].value === "Background 03") {
-    element.attributes[0].value = "Grey";
-  }
+
+  //   if (element.attributes[0].value === "Background 01") {
+  //     element.attributes[0].value = "Black";
+  //   }
+  //   if (element.attributes[0].value === "Background 02") {
+  //     element.attributes[0].value = "White";
+  //   }
+  //   if (element.attributes[0].value === "Background 03") {
+  //     element.attributes[0].value = "Grey";
+  //   }
+  renameBG(element);
+
   //   newData.mod5 = mod5;
   //let writeData = JSON.stringify(newData, null, 2);
   //fs.writeFile(edition + ".json", writeData, (err) => {
