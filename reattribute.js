@@ -62,10 +62,9 @@ const deleteFront = (data) => {
 };
 
 const addRarity = (data) => {
-  if (
-    rareAccess.includes(data.attributes[4].value) ||
-    rareBody.includes(data.attributes[3].value)
-  ) {
+  if (rareAccess.includes(data.attributes[4].value)) {
+    data.attributes.push({ trait_type: "Rarity", value: "Rare" });
+  } else if (rareBody.includes(data.attributes[3].value)) {
     data.attributes.push({ trait_type: "Rarity", value: "Rare" });
   } else {
     data.attributes.push({ trait_type: "Rarity", value: "Uncommon" });
@@ -131,4 +130,11 @@ file1.forEach((element) => {
 
 file1.forEach((element) => {
   console.log(element.attributes);
+});
+
+let writeData = JSON.stringify(file1, null, 2);
+
+fs.writeFile("test.json", writeData, (err) => {
+  if (err) throw err;
+  console.log(`File was written...`);
 });
