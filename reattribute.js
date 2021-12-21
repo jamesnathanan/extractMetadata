@@ -21,34 +21,34 @@ const rareBody = ["RareBody1", "RareBody2", "RareBody3"];
 
 const renameBG = (data) => {
   if (data.attributes[0].value === "Background 01") {
-    data.attributes[0].value = "Red";
+    data.attributes[0].value = "Light Grey Green";
   }
   if (data.attributes[0].value === "Background 02") {
-    data.attributes[0].value = "Blue";
+    data.attributes[0].value = "Blossom";
   }
   if (data.attributes[0].value === "Background 03") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Mint Green";
   }
   if (data.attributes[0].value === "Background 04") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Lilac";
   }
   if (data.attributes[0].value === "Background 05") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Light Khaki";
   }
   if (data.attributes[0].value === "Background 06") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Parchment";
   }
   if (data.attributes[0].value === "Background 07") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Gum Leaf";
   }
   if (data.attributes[0].value === "Background 08") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Dark Sky Blue";
   }
   if (data.attributes[0].value === "Background 09") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Coral";
   }
   if (data.attributes[0].value === "Background 10") {
-    data.attributes[0].value = "Green";
+    data.attributes[0].value = "Ghost";
   }
 };
 
