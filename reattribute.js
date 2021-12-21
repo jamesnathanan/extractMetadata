@@ -62,12 +62,16 @@ const deleteFront = (data) => {
 };
 
 const addRarity = (data) => {
-  if (rareAccess.includes(data.attributes[4].value)) {
-    data.attributes.push({ trait_type: "Rarity", value: "Rare" });
-  } else if (rareBody.includes(data.attributes[3].value)) {
-    data.attributes.push({ trait_type: "Rarity", value: "Rare" });
+  if (data.attributes[5]) {
+    return;
   } else {
-    data.attributes.push({ trait_type: "Rarity", value: "Uncommon" });
+    if (rareAccess.includes(data.attributes[4].value)) {
+      data.attributes.push({ trait_type: "RARITY", value: "Rare" });
+    } else if (rareBody.includes(data.attributes[3].value)) {
+      data.attributes.push({ trait_type: "RARITY", value: "Rare" });
+    } else {
+      data.attributes.push({ trait_type: "RARITY", value: "Uncommon" });
+    }
   }
 };
 
