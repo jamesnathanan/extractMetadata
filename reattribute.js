@@ -62,7 +62,7 @@ const deleteFront = (data) => {
 };
 
 const addRarity = (data) => {
-  if (data.attributes[5]) {
+  if (!data.attributes[5]) {
     return;
   } else {
     if (rareAccess.includes(data.attributes[4].value)) {
