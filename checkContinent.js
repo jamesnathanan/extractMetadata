@@ -160,6 +160,7 @@ const europe = [
   "STUTTGART",
   "TURIN",
   "VALENCIA",
+  "ZURICH",
 ];
 
 const africa = [
