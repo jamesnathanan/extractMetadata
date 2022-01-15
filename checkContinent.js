@@ -207,6 +207,31 @@ const southAmerica = [
   "SAO PAULO",
 ];
 
+const checkContinent = (data) => {
+  if (northAmerica.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "North America";
+    data.attributes[14].trait_type = "North America";
+  } else if (asia.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "Asia";
+    data.attributes[14].trait_type = "Asia";
+  } else if (europe.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "Europe";
+    data.attributes[14].trait_type = "Europe";
+  } else if (africa.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "Africa";
+    data.attributes[14].trait_type = "Africa";
+  } else if (antarctica.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "Antarctica";
+    data.attributes[14].trait_type = "Antarctica";
+  } else if (oceania.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "Oceania";
+    data.attributes[14].trait_type = "Oceania";
+  } else if (southAmerica.includes(data.attributes[14].value)) {
+    data.attributes[0].value = "South America";
+    data.attributes[14].trait_type = "South America";
+  }
+};
+
 const checkRarity = (data) => {
   for (let i = 0; i < data.attributes.length; i++) {
     if (data.attributes[i].value.includes("(rare)")) {
@@ -254,7 +279,7 @@ console.log(file1);
 file1.forEach((element) => {
   console.log(element.attributes);
 
-  checkRarity(element);
+  checkContinent(element);
 });
 
 file1.forEach((element) => {
@@ -263,7 +288,7 @@ file1.forEach((element) => {
 
 let writeData = JSON.stringify(file1, null, 2);
 
-fs.writeFile("newmetadata.json", writeData, (err) => {
+fs.writeFile("continentmetadata.json", writeData, (err) => {
   if (err) throw err;
   console.log(`File was written...`);
 });
